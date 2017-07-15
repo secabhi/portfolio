@@ -7,6 +7,9 @@
   "license": {
     "type": "MIT"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
   "scripts":{
     "start":"gulp"
   },
