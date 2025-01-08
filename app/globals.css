@@ -19,3 +19,48 @@ body {
   background: var(--background);
 }
 
+.page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+[data-aos="new-animation"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+
+  &.aos-animate {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translateX(100px);
+
+    &.aos-animate {
+      transform: translateX(0);
+    }
+  }
+}
+
+
+[data-aos="move-animation"] {
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below */
+  transition-property: transform, opacity;
+  transition-duration: 0.6s; /* Smooth animation */
+  transition-timing-function: ease-out; /* Smooth easing */
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translateY(100px); /* Larger offset for larger screens */
+
+    &.aos-animate {
+      transform: translateY(0); /* Reset position */
+    }
+  }
+}
+

@@ -4,12 +4,12 @@ import RightHeroSection from "./RightHeroSection";
 
 const Hero = () => {
   return (
-    <div className="h-[1024px] w-full bg-[url('/assets/images/bg-main.jpg')] bg-cover bg-center absolute pt-6 pl-12">
+    <div className="w-full bg-[url('/assets/images/bg-main.jpg')] bg-cover bg-center relative pt-10 pl-12">
       <NavBar />
-      <section className="ml-20 mt-48">
+      <section className="ml-20 mt-32">
         <div className="flex justify-between">
           <LeftHeroSection />
-          <RightHeroSection />
+          {/* <RightHeroSection /> */}
         </div>
       </section>
     </div>
