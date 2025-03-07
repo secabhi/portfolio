@@ -4,8 +4,9 @@ import React from "react";
 import Hero from "./components/Hero/Hero";
 import WhatIDo from "./components/WhatIDo";
 import WorkWith from "./components/WorkWith";
-import ScrollAnimation from "./newPage";
 import ProductContainer from "./components/Products/ProductContainer";
+import WhatPeopleSay from "./components/WhatPeopleSay";
+import Feedback from "./components/Feedback";
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
         <WorkWith />
         {/* <ScrollAnimation /> */}
         <ProductContainer />
+        <WhatPeopleSay />
+        <Feedback />
       </div>
     </main>
   );

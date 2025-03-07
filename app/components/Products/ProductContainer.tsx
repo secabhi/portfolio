@@ -2,13 +2,9 @@
 import Image from "next/image";
 import BlueText from "../BlueText";
 import React from "react";
+import ProductDetail from "./ProductDetail";
 
 const ProductContainer = () => {
-  const [activeTab, setActiveTab] = React.useState("tab1");
-
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
-  };
   return (
     <div className="flex flex-col items-start justify-center pl-32 pt-20">
       <div>
@@ -34,81 +30,64 @@ const ProductContainer = () => {
           />
         </div>
       </div>
-      <div className="mt-16 pb-10">
+      <div className="mt-16 pb-10 w-full">
         <div
           role="tablist"
           className="tabs tabs-bordered"
           data-aos="fade-up"
           data-aos-delay="500"
         >
-          {/* Tab 1 */}
           <input
             type="radio"
-            id="tab1"
             name="my_tabs_1"
-            className="peer hidden"
+            role="tab"
+            className={`tab !w-[240px] cursor-pointer`}
             aria-label="Website"
-            onClick={() => handleTabClick("tab1")}
-          />
-          <label
-            htmlFor="tab1"
-            className={`tab !w-[240px] cursor-pointer ${
-              activeTab === "tab1"
-                ? "text-black  !border-black"
-                : "text-[#9F9FA9]"
-            }`}
-          >
-            Website
-          </label>
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 1
-          </div>
-
-          {/* Tab 2 */}
-          <input
-            type="radio"
-            id="tab2"
-            name="my_tabs_1"
-            className="peer hidden"
-            aria-label="UI/UX Design"
             defaultChecked
-            onClick={() => handleTabClick("tab2")}
           />
-          <label
-            htmlFor="tab2"
-            className={`tab !w-[240px] cursor-pointer ${
-              activeTab === "tab2"
-                ? "text-black !border-black"
-                : "text-[#9F9FA9]"
-            }`}
+          <div
+            role="tabpanel"
+            className="tab-content py-10"
+            data-aos="fade-up"
+            data-aos-delay="500"
           >
-            UI/UX Design
-          </label>
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 2
+            <ProductDetail />
+            <ProductDetail />
+            <ProductDetail />
           </div>
 
-          {/* Tab 3 */}
           <input
             type="radio"
-            id="tab3"
             name="my_tabs_1"
-            className="peer hidden"
-            aria-label="Mobile / Small Devices"
-            onClick={() => handleTabClick("tab3")}
+            role="tab"
+            className={`tab !w-[240px] cursor-pointer`}
+            aria-label="UI/UX Design"
           />
-          <label
-            htmlFor="tab3"
-            className={`tab !w-[240px] cursor-pointer ${
-              activeTab === "tab3"
-                ? "text-black  !border-black"
-                : "text-[#9F9FA9]"
-            }`}
+          <div
+            role="tabpanel"
+            className="tab-content py-10"
+            data-aos="fade-up"
+            data-aos-delay="500"
           >
-            Mobile / Small Devices
-          </label>
-          <div role="tabpanel" className="tab-content p-10">
-            Tab content 3
+            <ProductDetail />
+            <ProductDetail />
+          </div>
+
+          <input
+            type="radio"
+            name="my_tabs_1"
+            role="tab"
+            className={`tab !w-[240px] cursor-pointer`}
+            aria-label="Mobile / Small Devices"
+          />
+          <div
+            role="tabpanel"
+            className="tab-content py-10"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <ProductDetail />
+            <ProductDetail />
           </div>
         </div>
       </div>
